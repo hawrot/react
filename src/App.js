@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <h1> Hello from React</h1>
         <p>This works</p>
+        <button>Switch name</button>
         <Person name="Andrew"/>
       <Person name="Garry">My hobbies: None yet</Person>
         <Person name="Joe"/>
