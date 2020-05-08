@@ -8,7 +8,7 @@ function App() {
       <h1> Hello from React</h1>
         <p>This works</p>
         <Person name="Andrew"/>
-        <Person name="Garry"/>
+      <Person name="Garry">My hobbies: None yet</Person>
         <Person name="Joe"/>
     </div>
   );
