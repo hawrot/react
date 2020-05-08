@@ -40,15 +40,23 @@ class App extends Component {
     }
 
     render () {
+
+        const style = {
+            backgroundColor: 'green',
+            color: 'white',
+            font: 'inherit',
+            border: '1px solid blue',
+            padding: '8px',
+            cursor: 'pointer'
+        }
+
         let persons = null;
         if(this.state.showPersons){
             persons = (
                 <div>
                     {this.state.persons.map((p, index) => {
                         return <Person click={ () => this.deletePersonHandler(index)} name={p.name} key={p.id} changed={(event) => this.nameChangedHandler(event, p.id)}/>
-                    })
-                    }
-
+                    })}
                 </div>
             );
         }
@@ -56,7 +64,7 @@ class App extends Component {
             <div className="App">
                 <h1>Hi, I'm a React App</h1>
                 <p>This is really working!</p>
-                <button onClick={this.togglePersonHandler}>{this.state.persons ? 'Show persons': 'Hide Persons'}</button>
+                <button style={style} onClick={this.togglePersonHandler}>{this.state.persons ? 'Show persons': 'Hide Persons'}</button>
                 {persons}
             </div>
         );
