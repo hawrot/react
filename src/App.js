@@ -59,6 +59,7 @@ class App extends Component {
                     })}
                 </div>
             );
+            style.backgroundColor = 'red';
         }
         return (
             <div className="App">
@@ -68,6 +69,7 @@ class App extends Component {
                 {persons}
             </div>
         );
+
         // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
     }
 }
