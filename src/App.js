@@ -7,9 +7,10 @@ function App() {
     <div className="App">
       <h1> Hello from React</h1>
         <p>This works</p>
-        <Person/>
+        <Person name="Andrew"/>
+        <Person name="Garry"/>
+        <Person name="Joe"/>
     </div>
-
   );
 }
 
