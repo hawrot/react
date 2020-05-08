@@ -26,7 +26,8 @@ class App extends Component {
     }
 
     togglePersonHandler = () =>{
-
+        const doesShows = this.state.showPersons;
+        this.setState({showPersons: !doesShows});
     }
 
     nameChangedHandler = (event) => {
@@ -44,7 +45,7 @@ class App extends Component {
             <div className="App">
                 <h1>Hi, I'm a React App</h1>
                 <p>This is really working!</p>
-                <button onClick={this.togglePersonHandler}>Switch Name</button>
+                <button onClick={this.togglePersonHandler}>{this.state.persons ? 'Show persons': 'Hide Persons'}</button>
                 {this.state.showPersons ?
                 <div>
                     <Person
