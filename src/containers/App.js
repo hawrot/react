@@ -1,36 +1,34 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import classes from './App.css'
-import Persons  from '../components/Persons/Persons'
+import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit';
-
-
 
 
 class App extends Component {
     state = {
         persons: [
-            { id: 'sdfsdf', name: 'Max', age: 28 },
-            {id: 'ewfw23r4e', name: 'Manu', age: 29 },
-            { id: '23r2df', name: 'Stephanie', age: 26 }
+            {id: 'sdfsdf', name: 'Max', age: 28},
+            {id: 'ewfw23r4e', name: 'Manu', age: 29},
+            {id: '23r2df', name: 'Stephanie', age: 26}
         ],
         otherState: 'some other value',
         showPersons: false
     }
 
-  deletePersonHandler = (personIndex) =>{
-    const persons = [...this.state.persons];
-    persons.splice(personIndex, 1);
-    this.setState({persons :  persons})
-  }
+    deletePersonHandler = (personIndex) => {
+        const persons = [...this.state.persons];
+        persons.splice(personIndex, 1);
+        this.setState({persons: persons})
+    }
 
-    togglePersonHandler = () =>{
+    togglePersonHandler = () => {
         const doesShows = this.state.showPersons;
         this.setState({showPersons: !doesShows});
     }
 
     nameChangedHandler = (event, id) => {
-        const personIndex = this.state.persons.findIndex(p =>{
+        const personIndex = this.state.persons.findIndex(p => {
             return p.id === id;
         });
         const person = {...this.state.persons[personIndex]};
@@ -40,19 +38,20 @@ class App extends Component {
         const persons = [...this.state.persons];
         persons[personIndex] = person;
 
-        this.setState( {
-            persons: persons})
+        this.setState({
+            persons: persons
+        })
     }
 
-    render () {
+    render() {
         let persons = null;
-        if(this.state.showPersons){
+        if (this.state.showPersons) {
             persons =
                 <Persons
-                        persons={this.state.persons}
-                        clicked={this.deletePersonHandler}
-                        changed={this.nameChangedHandler}
-                    />
+                    persons={this.state.persons}
+                    clicked={this.deletePersonHandler}
+                    changed={this.nameChangedHandler}
+                />
         }
 
 
@@ -66,9 +65,7 @@ class App extends Component {
                 />
                 {persons}
             </div>
-
         );
-
         // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
     }
 }
