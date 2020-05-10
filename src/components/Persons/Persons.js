@@ -3,22 +3,12 @@ import Person from "./Person/Person";
 
 class Persons extends Component {
 
-    static getDerivedStateFromProps(props, state){
-        console.log('Persons.js getDerivedState' + props);
-        return state;
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('Persons.js Should Componnent Update');
-        return true;
-    }
-
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('Persons.js GetSnapchot');
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('Component did update');
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        if(nextProps.persons !== this.props.persons){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     render() {
