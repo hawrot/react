@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Aux from '../../../hoc/Aux';
 import classes from './Person.css';
 import withClass from "../../../hoc/WithClass";
+import PropTypes from 'prop-types';
 
 
 class Person extends Component{
