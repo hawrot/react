@@ -3,13 +3,14 @@ import Person from "./Person/Person";
 
 class Persons extends PureComponent {
 
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
+    /*shouldComponentUpdate(nextProps, nextState, nextContext) {
         if(nextProps.persons !== this.props.persons || nextProps.changed !== this.props.changed || nextProps.clicked !== this.props.clicked){
             return true;
         }else {
             return false;
         }
-    }
+    }*/
+    //this was implemented automatically by PureComponent
 
     render() {
         console.log('Persons.js redner');
