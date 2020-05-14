@@ -13,5 +13,13 @@ axios.interceptors.request.use(request =>{
     return Promise.reject(error);
 });
 
+axios.interceptors.response.use(response =>{
+    console.log(response);
+    return response;
+}, error => {
+    console.log(error);
+    Promise.reject(error);
+});
+
 ReactDOM.render( <App />, document.getElementById( 'root' ) );
 registerServiceWorker();
