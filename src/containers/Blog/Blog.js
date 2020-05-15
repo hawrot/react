@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 
 import './Blog.css';
@@ -23,8 +22,11 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/new-post">New Post</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to={{
+                                pathname: '/new-post',
+                                hash: '#submit'
+                            }}>New Post</Link></li>
                         </ul>
                     </nav>
                 </header>
@@ -32,7 +34,8 @@ class Blog extends Component {
                 <Route path="/" exact render={()=> <FullPost/>}/>
                 <Route path="/new-post" exact render={()=> <NewPost/>}/>*/}
                 <Route path="/" exact component={Posts} />
-                <Route path="/new-post" exact component={NewPost} />
+                <Route path="/" exact component={FullPost} />
+                <Route path="/new-post"  component={NewPost} />
 
             </div>
         );
